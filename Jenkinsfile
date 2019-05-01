@@ -5,7 +5,7 @@ pipeline {
     }
 
     agent {
-                label "docker"
+                label "any"
             }
     stages {
         stage('Prerequisite Check') {
