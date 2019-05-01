@@ -17,19 +17,31 @@ pipeline {
         stage('Initialize') {
             steps {
                 echo 'Hello, Maven'
-                sh 'mvn --version'
+                sh 'java -version'
             }
         }
         stage('Code Compilation') {
             steps {
                 echo 'Hello, Maven'
-                sh 'mvn --version'
+                sh java -version'
+            }
+        }
+        stage('Sonar Inspection') {
+            steps {
+                echo 'Hello, Maven'
+                sh 'java -version'
+            }
+        }
+        stage('QA Code Testing') {
+            steps {
+                echo 'Hello, Maven'
+                sh 'java -version'
             }
         }
         stage('Build Docker Image') {
             steps {
                 echo 'Hello, Maven'
-                sh 'mvn --version'
+                sh 'java -version'
             }
         }
         stage('Upload Image to ECR') {
