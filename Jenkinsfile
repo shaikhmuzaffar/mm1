@@ -9,10 +9,9 @@ pipeline {
             }
     stages {
         stage('Prerequisite Check') {
-		  stage('Initialize') {
             steps {
                script {
-			       sleep 20
+			       sleep 60
                    def BUILD_BRANCH = env.BRANCH_NAME
                    def BUILD_BRANCH_TYPE = null
                    def BUILD_BRANCH_TASK = null
@@ -31,9 +30,8 @@ pipeline {
                    env.BUILD_VERSION = BUILD_VERSION
                    env.BUILD_TYPE = BUILD_TYPE
 			   }
-             }
-          }
-	    }
+            }
+        }
         stage('Initialize') {
             steps {
                 echo 'Hello, Maven'
