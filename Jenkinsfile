@@ -31,9 +31,9 @@ pipeline {
                    env.BUILD_VERSION = BUILD_VERSION
                    env.BUILD_TYPE = BUILD_TYPE
 			   }
-            }
-        }
-	}
+             }
+          }
+	    }
         stage('Initialize') {
             steps {
                 echo 'Hello, Maven'
