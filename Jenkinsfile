@@ -9,10 +9,6 @@ pipeline {
         label "master"
     }
 
-    tools {
-        maven 'M3'
-      }
-
     stages {
         stage('Prerequisite Check') {
             steps {
