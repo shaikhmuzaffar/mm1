@@ -11,7 +11,7 @@ pipeline {
         stage('Prerequisite Check') {
             steps {
                 echo 'Hello, Maven'
-                sh 'mvn --version'
+                sh 'java -version'
             }
         }
         stage('Initialize') {
