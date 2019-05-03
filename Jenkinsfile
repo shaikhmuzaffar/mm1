@@ -36,13 +36,15 @@ pipeline {
         }
         stage('Code Compilation') {
             steps {
-               sh '''
-               echo "Maven build: In Progress"
-               ls
-               pwd
-               mvn clean install
-               '''
-            }
+			    script {
+						  sh """
+						        echo "Code Compilation: In Process"
+								echo ${BUILD_VERSION}
+								mvn clean package
+								echo "Code Compilation : Completed"
+                            """
+				      }
+                }
         }
     }
 }
