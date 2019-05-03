@@ -37,6 +37,8 @@ pipeline {
             steps {
                sh '''
                echo "Maven build: In Progress"
+               ls
+               pwd
                mvn clean install
                '''
             }
