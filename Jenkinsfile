@@ -23,7 +23,7 @@ pipeline {
         stage('Code Compilation') {
             steps {
                 echo 'Hello, Maven'
-                sh java -version'
+                sh 'java -version'
             }
         }
         stage('Sonar Inspection') {
