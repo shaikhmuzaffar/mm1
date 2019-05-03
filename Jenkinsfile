@@ -12,7 +12,7 @@ pipeline {
         stage('Prerequisite Check') {
             steps {
                 script {
-                    sleep 60
+                    sleep 1
                     def BUILD_BRANCH = env.BRANCH_NAME
                     def BUILD_BRANCH_TYPE = null
                     def BUILD_BRANCH_TASK = null
