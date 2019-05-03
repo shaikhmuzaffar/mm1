@@ -33,17 +33,22 @@ pipeline {
             }
         }
         stage('Initialize') {
-            steps {
-                echo 'Hello, Maven'
-                sh 'java -version'
-            }
+
         }
         stage('Code Compilation') {
             steps {
-                echo 'Hello, Maven'
-                sh 'java -version'
+			    script {
+				        container('docker') {
+						  sh """
+						        echo "Code Compilation: In Process"
+								echo ${BUILD_VERSION}
+								mvn -s  -U -Drevision=${BUILD_VERSION} clean package -Ddependency -check.skip=true
+								echo "Code Compilation : Completed"
+                            """
+						  }
+				        }
+				}
             }
-        }
         stage('Sonar Inspection') {
             steps {
                 echo 'Hello, Maven'
